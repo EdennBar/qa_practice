@@ -1,0 +1,17 @@
+
+1.
+To test an API endpoint, first, I need to understand what it does. Then I think of different scenarios to test,
+using valid and invalid inputs, and checking how it handles errors. Next, I set up a testing environment
+and start writing the tests based on E2E, BE, Sanity tests.
+Finally, I run the tests and check if the endpoint behaves as expected.
+This process is being documented and repeated whenever there are updates to the API endpoint.
+
+2.
+a. Parameters Type: I would test different types of parameters including valid and invalid types,
+so I can make sure the system works as expected.
+
+b. Logical Constraints: To my knowledge, I would test the camera properties as they can't be changed when the camera is capturing.
+
+3.
+- I would need the SDK documentation so I can know about the available functions and their behavior.
+- I would like to know what happens on specific error situations, like how would the camera work when facing an unexpected error so it's possible to test it better
