@@ -63,7 +63,7 @@ def test_check_status_code_bad_request(headers, base_url):
     response = requests.post(url_post, json=body, headers=headers)
     assert response.status_code == 400
 
-#Getting 500 by request API that is not valid
+#404 Not Found
 def test_check_status_code_Internal_Server_error(headers, base_url):
     url_post = f"{base_url}/WRONG_URL"
     body = {
@@ -84,7 +84,7 @@ def test_check_status_code_Internal_Server_error(headers, base_url):
         }
     }
     response = requests.post(url_post, json=body, headers=headers)
-    assert response.status_code == 500
+    assert response.status_code == 404
 
 # 401, Wrong Bearer token
 def test_check_status_code_unauthorized(base_url):
