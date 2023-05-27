@@ -35,12 +35,9 @@ class Files_handler:
         return True
 
     def is_int(self, min_amount):
-        try:
-            type_of_min_amount = isinstance(min_amount, int)
-            if type_of_min_amount:
-                return True
-        except ValueError:
-            return False
+        if isinstance(min_amount, int):
+            return True
+        return False
 
     def main(self, min_amount):
         path_list = [self.pathA, self.pathB, self.pathC]
