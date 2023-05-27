@@ -25,6 +25,12 @@ def files_handler(create_directories):
     return Files_handler(pathA, pathB, pathC)
 
 
+@pytest.fixture()
+def delete_c_files():
+    file_path_c = "dirs/c"
+    for f in os.listdir(file_path_c):
+        os.remove(os.path.join(file_path_c, f))
+
 # Test Case: Validate the input type of int
 def test_is_int(files_handler):
     assert files_handler.is_int(2) == True
@@ -80,7 +86,7 @@ def test_min_is_equal_to_string(files_handler):
 
 
 # Test Case: Validate the functionality when min_amount > 1
-def test_min_amount_is_bigger_then_two(files_handler):
+def test_min_amount_is_bigger_then_two(files_handler, delete_c_files):
     min_amount = 2
     files_handler.main(min_amount)
     assert not os.listdir('dirs/c'),  "The scores.txt and 1.csv files should exist because there is a match"
